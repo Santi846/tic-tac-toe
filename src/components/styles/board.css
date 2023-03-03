@@ -1,0 +1,7 @@
+.square_1, .square_2, .square_3, .square_4, .square_5, .square_6, .square_7, .square_8, .square_9{
+    width: 200px;
+    height: 200px;
+    border: solid 3px #000;
+    background: aliceblue;
+    color: #000;
+}

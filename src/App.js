@@ -1,11 +1,14 @@
 import './App.css';
-import { ShoppingList } from './components/styles/list';
+import { Game} from './components/Game.jsx';
+
+
+//TODO: give styles to components
 
 function App() {
   return (
     <div className="App">
       <h1>Tic tac Toe</h1>
-      <ShoppingList name = 'SantiHouse'></ShoppingList>
+      <Game></Game>
     </div>
   );
 }
