@@ -1,11 +1,24 @@
 import React from "react";
+import './styles/square.css';
 
-export class Square extends React.Component {
-    render() {
-        return(
-            <button className="square">
-                {this.props.value}
-            </button>
-        );
-    }
+export function Square ({value}) {
+    return(
+        <>
+            <div className="board-row">
+                <button className="square">{value}</button>
+                {/* <button className="square">{value}</button>
+                <button className="square">{value}</button> */}
+            </div>
+            {/* <div className="board-row">
+                <button className="square">{value}</button>
+                <button className="square">{value}</button>
+                <button className="square">{value}</button>
+            </div>
+            <div className="board-row">
+                <button className="square">{value}</button>
+                <button className="square">{value}</button>
+                <button className="square">{value}</button>
+            </div> */}
+            </>
+    );
 }

@@ -1,10 +1,9 @@
 import React from "react";
 import { Board } from "./Board.jsx";
 
-export class Game extends React.Component {
-    render(){
+export function Game () {
         return(
             <Board placeholder='Texto a modificar'></Board>
         );
-    }
+    
 }
