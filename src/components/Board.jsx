@@ -1,26 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Square } from "./Square.jsx";
 import './styles/board.css';
 
 export function Board () {
-    
+
+    const [squares, setSquares] = useState(Array(9).fill(null));
+
+    const handleClick= () => {
+        const nextSquares = squares.slice();
+        nextSquares[0] = 'X';
+        setSquares(nextSquares);
+    } 
+
         return(
             <>
-            <div>
-                <Square value="1"></Square>
-                <Square value="2" className="board-row"></Square>
-                <Square value="3" className="board-row"></Square>
+            <div className="board">
+            <div className="board-row">
+                <Square value={squares[0]} OnSquareClick={handleClick}></Square>
+                <Square value={squares[1]} OnSquareClick={handleClick}></Square>
+                <Square value={squares[2]} OnSquareClick={handleClick}></Square>
             </div>
-            <div>
-                <Square value="4" className="board-row"></Square>
-                <Square value="5" className="board-row"></Square>
-                <Square value="6" className="board-row"></Square>
+            <div className="board-row">
+                <Square value={squares[3]} OnSquareClick={handleClick}></Square>
+                <Square value={squares[4]} OnSquareClick={handleClick}></Square>
+                <Square value={squares[5]} OnSquareClick={handleClick}></Square>
             </div>
              <div className="board-row">
-                <Square value="7"></Square>
-                <Square value="8"></Square>
-                <Square value="9"></Square>
+                <Square value={squares[6]} OnSquareClick={handleClick}></Square>
+                <Square value={squares[7]} OnSquareClick={handleClick}></Square>
+                <Square value={squares[8]}OnSquareClick={handleClick}></Square>
             </div>
+            </div>
+            
             </>
             
         );
