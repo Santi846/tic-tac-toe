@@ -27,7 +27,7 @@ const calculateWinner = (squares) => {
     return null;
 }
 
-export function Board () {
+export function Board ({onPlay}) {
 
     
     const [xIsNext, setxIsNext] = useState(true);
@@ -47,13 +47,29 @@ export function Board () {
             nextSquares[i] = 'O';
         }
 
-        setSquares(nextSquares);
-        setxIsNext(!xIsNext);
+        // setSquares(nextSquares);
+        // setxIsNext(!xIsNext);
+
+        onPlay=(nextSquares);
 
     } 
 
+    
+
+    const winner = calculateWinner(squares);
+    let status;
+
+    if (winner) {
+        status = "The Winner is: " + winner;
+    } else {
+        status = "Move: " + (xIsNext ? "X" : "0");
+    }
+
+    
+
         return(
             <>
+            <div className="status">{status}</div>
             <div className="board">
             <div className="board-row">
                 <Square value={squares[0]} OnSquareClick={() => handleClick(0)}></Square>
