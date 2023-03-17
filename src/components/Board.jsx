@@ -27,7 +27,7 @@ const calculateWinner = (squares) => {
     return null;
 }
 
-export function Board ({onPlay}) {
+export function Board () {
 
     
     const [xIsNext, setxIsNext] = useState(true);
@@ -47,10 +47,10 @@ export function Board ({onPlay}) {
             nextSquares[i] = 'O';
         }
 
-        // setSquares(nextSquares);
-        // setxIsNext(!xIsNext);
+        setSquares(nextSquares);
+        setxIsNext(!xIsNext);
 
-        onPlay=(nextSquares);
+        // onPlay=(nextSquares);
 
     } 
 
